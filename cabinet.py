@@ -1,6 +1,6 @@
 import pandas as pd
 
-print('----'*40)
+print('*****'*40)
 print('Информация о классах')
 
 class_card = {
