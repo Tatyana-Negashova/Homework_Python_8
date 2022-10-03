@@ -1,5 +1,5 @@
-import student_info as si
-import cabinet_info as cab
+import student as st
+import cabinet as cab
 
 def option():
     choice = int(input('Какую операцию хотите сделать? \n \
@@ -10,9 +10,9 @@ def option():
 
     if choice == 1:
         Surname = str(input("Введите фамилию ученика: "))
-        if Surname in si.stud_card['Фамилия']:
-            index = si.stud_card['Фамилия'].index(Surname)
-        print(f"{si.stud_card['ID'][index]}, {si.stud_card['Имя'][index]},{si.stud_card['Фамилия'][index]}\n,{si.stud_card['Дата рождения'][index]}, {si.stud_card['Успеваемость'][index]}")
+        if Surname in st.student_card['Фамилия']:
+            index = st.student_card['Фамилия'].index(Surname)
+        print(f"{st.student_card['ID'][index]}, {st.student_card['Имя'][index]},{st.student_card['Фамилия'][index]}\n,{st.student_card['Дата рождения'][index]}, {st.student_card['Успеваемость'][index]}")
         print('\nХотите выполнить иную операцию? Y или N: ')
         num = input()
         if num == 'Y' or 'y':
@@ -23,13 +23,13 @@ def option():
         c = input('Введите ID студента для получения информации: ')
         if c in cab.class_card['ID']:
             index = cab.class_card['ID'].index(c)
-            print(f" Сидит в классе - {cab.class_card['Предмет'][index]}\n\, за партой номер - {cab.class_card['Номер парты'][index]}, это {cab.class_card['Ряд'][index]}, парта - {cab.class_card['Вид парты'][index]}, Имя: {si.stud_card['Имя'][index]}, Фамилия - {si.stud_card['Фамилия'][index]}, и успеваемасть у студента: {si.stud_card['Успеваемость'][index]}")
+            print(f" Сидит в классе - {cab.class_card['Предмет'][index]}, за партой номер - {cab.class_card['Номер парты'][index]}, это {cab.class_card['Ряд'][index]}, Имя: {st.student_card['Имя'][index]}, Фамилия - {st.student_card['Фамилия'][index]}, и успеваемасть у студента: {st.student_card['Успеваемость'][index]}")
             print('\nХотите выполнить иную операцию? Y или N: ')
             num = input()
             if num == 'Y' or 'y':
                 option()
             exit()
     else:
-        print('Выберите ещё раз')
+        print('Спасибо за обращение. Хорошего дня!')
     exit()
 option()
